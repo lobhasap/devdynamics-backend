@@ -1,0 +1,344 @@
+{
+  "info": {
+    "name": "Expense Splitter API",
+    "description": "API for managing and splitting expenses among groups of people",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Expense Management",
+      "item": [
+        {
+          "name": "Add Expense - Dinner",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 600.00,\n  \"description\": \"Dinner at restaurant\",\n  \"paidBy\": \"Shantanu\",\n  \"splitType\": \"equal\",\n  \"participants\": [\"Shantanu\", \"Sanket\", \"Om\"],\n  \"category\": \"Food\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Add Expense - Groceries",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 450.00,\n  \"description\": \"Groceries for the week\",\n  \"paidBy\": \"Sanket\",\n  \"splitType\": \"equal\",\n  \"participants\": [\"Shantanu\", \"Sanket\", \"Om\"],\n  \"category\": \"Food\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Add Expense - Petrol",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 300.00,\n  \"description\": \"Petrol for car\",\n  \"paidBy\": \"Om\",\n  \"splitType\": \"equal\",\n  \"participants\": [\"Shantanu\", \"Sanket\", \"Om\"],\n  \"category\": \"Travel\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Add Expense - Movie Tickets",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 500.00,\n  \"description\": \"Movie tickets\",\n  \"paidBy\": \"Shantanu\",\n  \"splitType\": \"equal\",\n  \"participants\": [\"Shantanu\", \"Sanket\", \"Om\"],\n  \"category\": \"Entertainment\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Add Expense - Pizza",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 280.00,\n  \"description\": \"Pizza night\",\n  \"paidBy\": \"Sanket\",\n  \"splitType\": \"equal\",\n  \"participants\": [\"Shantanu\", \"Sanket\", \"Om\"],\n  \"category\": \"Food\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "List All Expenses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Update Expense - Change Petrol Amount",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 350.00,\n  \"description\": \"Petrol for car\",\n  \"paidBy\": \"Om\",\n  \"splitType\": \"equal\",\n  \"participants\": [\"Shantanu\", \"Sanket\", \"Om\"],\n  \"category\": \"Travel\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses/{{petrolExpenseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses", "{{petrolExpenseId}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Expense - Remove Pizza",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses/{{pizzaExpenseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses", "{{pizzaExpenseId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Settlements & People",
+      "item": [
+        {
+          "name": "Get All People",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/people",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "people"]
+            }
+          }
+        },
+        {
+          "name": "Get Current Balances",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/settlements/balances",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "settlements", "balances"]
+            }
+          }
+        },
+        {
+          "name": "Get Settlement Summary",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/settlements",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "settlements"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Edge Cases & Validation",
+      "item": [
+        {
+          "name": "Add Expense - Invalid Amount",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": -100.00,\n  \"description\": \"Invalid expense\",\n  \"paidBy\": \"Shantanu\",\n  \"splitType\": \"equal\",\n  \"participants\": [\"Shantanu\", \"Sanket\", \"Om\"],\n  \"category\": \"Food\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Add Expense - Empty Description",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 100.00,\n  \"description\": \"\",\n  \"paidBy\": \"Shantanu\",\n  \"splitType\": \"equal\",\n  \"participants\": [\"Shantanu\", \"Sanket\", \"Om\"],\n  \"category\": \"Food\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Add Expense - Missing Paid By",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 100.00,\n  \"description\": \"Test expense\",\n  \"splitType\": \"equal\",\n  \"participants\": [\"Shantanu\", \"Sanket\", \"Om\"],\n  \"category\": \"Food\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Update Non-existent Expense",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 100.00,\n  \"description\": \"Test expense\",\n  \"paidBy\": \"Shantanu\",\n  \"splitType\": \"equal\",\n  \"participants\": [\"Shantanu\", \"Sanket\", \"Om\"],\n  \"category\": \"Food\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses/000000000000000000000000",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses", "000000000000000000000000"]
+            }
+          }
+        },
+        {
+          "name": "Delete Non-existent Expense",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/expenses/000000000000000000000000",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "expenses", "000000000000000000000000"]
+            }
+          }
+        },
+        {
+          "name": "Get Balances - No Expenses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/settlements/balances",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "settlements", "balances"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "petrolExpenseId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "pizzaExpenseId",
+      "value": "",
+      "type": "string"
+    }
+  ]
+} 
