@@ -2,6 +2,21 @@
 
 A backend system that helps groups of people split expenses fairly and calculate who owes money to whom. Similar to apps like Splitwise and Google Pay Bills Split.
 
+## Demo & Testing
+
+- **Deployed API:**  
+  https://devdynamics-backend-production.up.railway.app
+
+- **Public Postman Collection:**  
+  [Expense Splitter Postman Collection](https://gist.github.com/lobhasap/657c0a3c320478261d698129d5e40cb7)
+
+### How to Test
+
+1. Import the Postman collection from the link above.
+2. Set the environment variable `baseUrl` to `https://devdynamics-backend-production.up.railway.app`.
+3. Set `petrolExpenseId` to `684d97f430e5f8a382d69d95` and `pizzaExpenseId` to `684d97f430e5f8a382d69d97` in your Postman environment.
+4. Run the requests in order to see the API in action.
+
 ## Features
 
 ### Core Features

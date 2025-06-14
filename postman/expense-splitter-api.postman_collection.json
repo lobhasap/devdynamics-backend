@@ -327,17 +327,17 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "http://localhost:3000",
+      "value": "https://devdynamics-backend-production.up.railway.app",
       "type": "string"
     },
     {
       "key": "petrolExpenseId",
-      "value": "",
+      "value": "684d97f430e5f8a382d69d95",
       "type": "string"
     },
     {
       "key": "pizzaExpenseId",
-      "value": "",
+      "value": "684d97f430e5f8a382d69d97",
       "type": "string"
     }
   ]
