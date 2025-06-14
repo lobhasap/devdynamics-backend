@@ -327,7 +327,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://devdynamics-backend-production.up.railway.app",
+      "value": "https://devdynamics-backend-ixyb.onrender.com",
       "type": "string"
     },
     {
