@@ -188,6 +188,31 @@ npm test
 3. Configure environment variables
 4. Deploy using Git integration
 
+## Demo & Testing
+
+- **Deployed API:**  
+  https://devdynamics-backend-production.up.railway.app
+
+- **Public Postman Collection:**  
+  [Expense Splitter Postman Collection](https://gist.github.com/lobhasap/657c0a3c320478261d698129d5e40cb7)
+
+### How to Test
+
+1. Import the Postman collection from the link above.
+2. Set the environment variable `baseUrl` to `https://devdynamics-backend-production.up.railway.app`.
+3. Set `petrolExpenseId` to `684d97f430e5f8a382d69d95` and `pizzaExpenseId` to `684d97f430e5f8a382d69d97` in your Postman environment.
+4. Run the requests in order to see the API in action.
+
+---
+
+**Submission Checklist:**
+- [x] Code pushed to GitHub
+- [x] Deployed on Railway
+- [x] Postman collection public and linked in README
+- [x] README updated with all instructions and links
+
+If you have any questions or need to see example requests, check the Postman collection or reach out!
+
 ## License
 
 MIT
