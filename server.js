@@ -14,6 +14,21 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Welcome to Expense Splitter API',
+    documentation: 'https://github.com/lobhasap/devdynamics-backend',
+    endpoints: {
+      expenses: '/api/expenses',
+      settlements: '/api/settlements',
+      people: '/api/people'
+    },
+    version: '1.0.0'
+  });
+});
+
 // Routes
 app.use('/api/expenses', require('./routes/expenses'));
 app.use('/api/settlements', require('./routes/settlements'));
